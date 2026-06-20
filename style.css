@@ -1,0 +1,241 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 30px;
+    background: linear-gradient(
+        to right,
+        #ffecd2 0%,
+        #fcb69f 100%
+    );
+    position: relative;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background:
+        radial-gradient(circle, rgba(255,255,255,0.2) 10%, transparent 10%);
+    background-size: 50px 50px;
+    z-index: -1;
+}
+
+header {
+    text-align: center;
+    color: #1f2937; 
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 18px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.form-section,
+.table-section {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.form-section {
+    width: 350px;
+}
+
+.form-section h2,
+.table-section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.form-section input {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    outline: none;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.form-section input:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 8px rgba(102,126,234,0.4);
+}
+
+.form-section button {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    background: #667eea;
+    color: white;
+    font-size: 17px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.form-section button:hover {
+    background: #5563d6;
+    transform: translateY(-2px);
+}
+
+.table-section {
+    width: 750px;
+}
+
+.table-container {
+    max-height: 350px;
+    overflow-y: auto;
+    border-radius: 10px;
+}
+
+/* Scrollbar */
+
+.table-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.table-container::-webkit-scrollbar-track {
+    background: #eee;
+    border-radius: 10px;
+}
+
+.table-container::-webkit-scrollbar-thumb {
+    background: #667eea;
+    border-radius: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    background: #667eea;
+    color: white;
+    padding: 15px;
+    position: sticky;
+    top: 0;
+}
+
+td {
+    padding: 14px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+tr:nth-child(even) {
+    background: #f8f9fa;
+}
+
+tr:hover {
+    background: #edf2ff;
+}
+
+/* Buttons */
+
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.edit-btn {
+    background: #f39c12;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.edit-btn:hover {
+    background: #d68910;
+}
+
+.delete-btn {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.delete-btn:hover {
+    background: #c0392b;
+}
+
+/* Mobile */
+
+@media (max-width: 640px) {
+
+    body {
+        padding: 15px;
+    }
+
+    header h1 {
+        font-size: 30px;
+    }
+
+    .container {
+        flex-direction: column;
+    }
+
+    .form-section,
+    .table-section {
+        width: 100%;
+        padding: 20px;
+    }
+
+    table {
+        font-size: 13px;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+    }
+}
+
+/* Tablet */
+
+@media (min-width: 641px) and (max-width: 1024px) {
+
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .table-section {
+        width: 100%;
+    }
+}
